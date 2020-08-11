@@ -1,6 +1,6 @@
 import numpy as np
-from config import GPU # same with numpy if cuda not available
-from functions import softmax, cross_entropy_error
+from common.config import GPU # same with numpy if cuda not available
+from common.functions import softmax, cross_entropy_error
 
 class MatMul:
     def __init__(self, W):
@@ -9,14 +9,14 @@ class MatMul:
         self.x = None
 
     def forward(self, x):
-        W = self.params
+        W, = self.params # W, 차이가 뭐임?
         out = np.dot(x, W)
         self.x = x
         return out
 
     def backward(self, dout):
-        W = self.params
-        dx = np.dot(dout, np.trnspose(W))
+        W, = self.params
+        dx = np.dot(dout, np.transpose(W))
         dW = np.dot(np.transpose(self.x), dout)
         self.grads[0][...] = dW
         return dx

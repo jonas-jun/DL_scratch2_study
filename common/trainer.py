@@ -31,6 +31,7 @@ class Trainer:
                 batch_t = t[iters*batch_size:(iters+1)*batch_size]
 
                 # update weights
+                # print(batch_x.shape, batch_t.shape)
                 loss = model.forward(batch_x, batch_t)
                 model.backward()
                 params, grads = remove_duplicate(model.params, model.grads) # 공유된 가중치를 하나로 모음
