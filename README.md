@@ -13,3 +13,4 @@ ch2. 통계적 자연어 처리 기법
   - SVD(차원축소): sparse vector가 아닌 dense vector로 표기
   
 ch3. Word2Vec 1
+  - CBOW: 주변 단어들을 사용하여 target word를 추정할 수 있도록 represent
