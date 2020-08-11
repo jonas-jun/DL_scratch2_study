@@ -12,5 +12,12 @@ ch2. 통계적 자연어 처리 기법
   - W(상호정보량): 'the'가 'car'하고만 많이 나오나? 아니다. 상대적으로 함께 자주 나오는 단어들을 표기하는 기법
   - SVD(차원축소): sparse vector가 아닌 dense vector로 표기
   
-ch3. Word2Vec 1
+ch3. Word2Vec 1 (추론적 처리 기법)
   - CBOW: 주변 단어들을 사용하여 target word를 추정할 수 있도록 represent
+      input으로 주변 여러 단어들을 받고 각각 동일한 weight(in)을 곱해준 다음, 하나의 단어 벡터를 뽑아서 target과 비교
+  - skip-gram: 하나의 단어를 받아서 주변 단어들을 추정하는 방식
+      input을 하나의 단어 벡터로 받고, hidden_layer를 지나 여러 주변 단어 벡터들로 출력
+      이때 loss는 각 모든 단어들의 loss들의 총합 (p.144)
+  - 학습 속도는 CBOW가 빠르지만 성능은 skip-gram이 좋은 것으로 알려져 있다. 손실을 구해야할 벡터들이 많기 때문에 CBOW의 속도가 느리다.
+
+  - to do: ch3 skip-gram.py 구현해보기
