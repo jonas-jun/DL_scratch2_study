@@ -20,4 +20,7 @@ ch3. Word2Vec 1 (추론적 처리 기법)
       이때 loss는 각 모든 단어들의 loss들의 총합 (p.144)
   - 학습 속도는 CBOW가 빠르지만 성능은 skip-gram이 좋은 것으로 알려져 있다. 손실을 구해야할 벡터들이 많기 때문에 CBOW의 속도가 느리다.
 
-  - to do: ch3 skip-gram.py 구현해보기
+ch4. Word2Vec 2 (embedding & negative sampling)
+  - 단어 수가 급수적으로 늘어날 때 2곳에서 병목이 발생할 수 있다. 1)input * W = hidden, 2)softmax(score)
+  - embedding: 첫 번째 bottleneck을 해결해준다. W층에서 필요한 index의 rows만 가져온다. (구현은 layers에)
+  
